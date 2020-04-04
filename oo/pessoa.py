@@ -1,4 +1,5 @@
 class Pessoa:
+    olhos = 2    # atributo de classe ou default deve ser definido fora do def pois não alocam espaço na memoria
     def __init__(self, *filhos,  nome='None', idade=54):
         self.idade = idade
         self.nome = nome
@@ -18,6 +19,13 @@ if __name__ == '__main__':
         print(filhos.nome)
     luciano.sobrenome = 'Ramalho' #cria atributo em tempo de execução
     del luciano.filhos      #remove atributos em tempo de execução
-    print(luciano.__dict__) #mostra os atributos da Pessoa luciano
-    print(adio.__dict__)    #mostra os atributos da Pessoa filho adio
+    luciano.olhos = 1
+    del luciano.olhos       #remove o atributo olhos do objeto luciano, permanecendo na classe
+    print(luciano.__dict__) #mostra os atributos de instância da Pessoa luciano
+    print(adio.__dict__)    #mostra os atributos de instância da Pessoa filho adio
+    Pessoa.olhos = 4        #altera o atributo olhos da classe Pessoa
+    print(Pessoa.olhos)
+    print(luciano.olhos)
+    print(adio.olhos)
+    print(id(Pessoa.olhos), id(luciano.olhos), id(adio.olhos))
 
