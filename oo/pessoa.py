@@ -1,3 +1,4 @@
+
 class Pessoa:
     olhos = 2    # atributo de classe ou default deve ser definido fora do def pois não alocam espaço na memoria
     def __init__(self, *filhos,  nome='None', idade=54):
