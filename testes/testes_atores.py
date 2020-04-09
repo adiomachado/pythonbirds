@@ -10,7 +10,7 @@ sys.path.append(project_dir)
 
 import unittest
 from unittest.case import TestCase
-from atores import Ator, DESTRUIDO, ATIVO, Obstaculo, Porco, PassaroAmarelo, PassaroVermelho
+from testes_atores import Ator, DESTRUIDO, ATIVO, Obstaculo, Porco, PassaroAmarelo, PassaroVermelho
 
 
 class AtorTestes(TestCase):

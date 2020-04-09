@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from atores import PassaroVermelho, PassaroAmarelo, Porco, Obstaculo
-from fase import Fase
+from testes_atores import PassaroVermelho, PassaroAmarelo, Porco, Obstaculo
+from testes_fase import Fase
 import placa_grafica
 
 fase_exemplo = Fase()

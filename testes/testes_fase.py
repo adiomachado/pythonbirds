@@ -14,9 +14,9 @@ project_dir = os.path.join(os.path.dirname(__file__), '..')
 project_dir = os.path.normpath(project_dir)
 sys.path.append(project_dir)
 
-from atores import (Obstaculo, Porco, PassaroVermelho, PassaroAmarelo,
-                    DESTRUIDO, ATIVO, DuploLancamentoExcecao)
-from fase import Fase, Ponto, EM_ANDAMENTO, VITORIA, DERROTA
+from testes_atores import (Obstaculo, Porco, PassaroVermelho, PassaroAmarelo,
+                           DESTRUIDO, ATIVO, DuploLancamentoExcecao)
+from testes_fase import Fase, Ponto, EM_ANDAMENTO, VITORIA, DERROTA
 
 
 class AtorFake:

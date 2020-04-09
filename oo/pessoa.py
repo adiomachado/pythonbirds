@@ -9,8 +9,22 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+    @staticmethod
+    def metodo_estatico():
+        return 42
+
+    @classmethod
+    def nome_e_atributos_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
+
+class Homem(Pessoa):
+    pass
+
+class Mutante(Pessoa):
+    olhos = 3
+
 if __name__ == '__main__':
-    adio = Pessoa(nome='Adio') # faz o list de filhos
+    adio = Mutante(nome='Adio') # faz o list de filhos
     luciano = Pessoa(adio, nome='Luciano') # os filhos da lista adio pertencem a Pessoa luciano
     print(Pessoa.cumprimentar(luciano))
     print(luciano.cumprimentar())
@@ -24,9 +38,17 @@ if __name__ == '__main__':
     del luciano.olhos       #remove o atributo olhos do objeto luciano, permanecendo na classe
     print(luciano.__dict__) #mostra os atributos de instância da Pessoa luciano
     print(adio.__dict__)    #mostra os atributos de instância da Pessoa filho adio
-    Pessoa.olhos = 4        #altera o atributo olhos da classe Pessoa
+    #Pessoa.olhos = 4        #altera o atributo olhos da classe Pessoa
+
     print(Pessoa.olhos)
     print(luciano.olhos)
     print(adio.olhos)
     print(id(Pessoa.olhos), id(luciano.olhos), id(adio.olhos))
-
+    print(Pessoa.metodo_estatico(), luciano.metodo_estatico())
+    print(Pessoa.nome_e_atributos_de_classe(), luciano.nome_e_atributos_de_classe())
+    pessoa = Pessoa('Anonimo')
+    print(isinstance(pessoa, Pessoa))
+    print(isinstance(pessoa, Homem))
+    print(isinstance(adio, Pessoa))
+    print(isinstance(adio, Homem))
+    print(adio.olhos)

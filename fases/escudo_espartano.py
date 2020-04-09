@@ -7,8 +7,8 @@ project_dir = path.dirname(__file__)
 project_dir = path.join('..')
 sys.path.append(project_dir)
 
-from atores import PassaroAmarelo, PassaroVermelho, Obstaculo, Porco
-from fase import Fase
+from testes_atores import PassaroAmarelo, PassaroVermelho, Obstaculo, Porco
+from testes_fase import Fase
 from placa_grafica_tkinter import rodar_fase
 from random import randint
 
