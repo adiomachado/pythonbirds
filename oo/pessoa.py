@@ -7,7 +7,7 @@ class Pessoa:
         self.filhos = list(filhos)
 
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return f'Olá, meu nome é {self.nome}'
 
     @staticmethod
     def metodo_estatico():
@@ -18,14 +18,22 @@ class Pessoa:
         return f'{cls} - olhos {cls.olhos}'
 
 class Homem(Pessoa):
-    pass
+    def cumprimentar(self):
+        cumprimentar_da_classe = super().cumprimentar()
+        return f'{cumprimentar_da_classe}. Aperto de mão'
 
 class Mutante(Pessoa):
     olhos = 3
 
 if __name__ == '__main__':
-    adio = Mutante(nome='Adio') # faz o list de filhos
-    luciano = Pessoa(adio, nome='Luciano') # os filhos da lista adio pertencem a Pessoa luciano
+    """
+    faz o list de filhos
+    """
+    adio = Pessoa(nome='Adio')
+    """
+    Instancia Hoem no objeto luciano os filhos da lista adio pertencem a luciano
+    """
+    luciano = Homem(adio, nome='Luciano')
     print(Pessoa.cumprimentar(luciano))
     print(luciano.cumprimentar())
     print(luciano.nome)
@@ -38,7 +46,6 @@ if __name__ == '__main__':
     del luciano.olhos       #remove o atributo olhos do objeto luciano, permanecendo na classe
     print(luciano.__dict__) #mostra os atributos de instância da Pessoa luciano
     print(adio.__dict__)    #mostra os atributos de instância da Pessoa filho adio
-    #Pessoa.olhos = 4        #altera o atributo olhos da classe Pessoa
 
     print(Pessoa.olhos)
     print(luciano.olhos)
@@ -52,3 +59,5 @@ if __name__ == '__main__':
     print(isinstance(adio, Pessoa))
     print(isinstance(adio, Homem))
     print(adio.olhos)
+    print(luciano.cumprimentar())
+    print(adio.cumprimentar())
