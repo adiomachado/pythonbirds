@@ -58,7 +58,7 @@ class PassaroFake(AtorFake):
 
     def lancar(self, angulo, tempo):
         if self._lancado:
-            raise DuploLancamentoExcecao()
+            raise DuploLancamentoExcecao(Exception)
         self._lancado = True
 
     def colidir_com_chao(self):
@@ -189,7 +189,7 @@ class FaseTestes(TestCase):
         fase.adicionar_passaro(passaro)
         porco = PorcoFake(2, 2)
         fase.adicionar_porco(porco)
-        fase.calcular_pontos(0)
+        fase.calcular_pontos(0) # ctrl+click vai para o método no script
         self.assertTrue(passaro.colidir_executado)
         self.assertTrue(porco.colidir_executado)
         self.assertTrue(passaro.calcular_posicao_executado)
