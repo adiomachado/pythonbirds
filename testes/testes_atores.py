@@ -120,7 +120,7 @@ class AtorTestes(TestCase):
         self.assertEqual(ator.status, ATIVO, 'Status deveria ser ativo antes da colisão')
         self.assertEqual(ator2.status, ATIVO, 'Status deveria ser ativo antes da colisão')
         ator.colidir(ator2, intervalo)
-        # Conferindo status dos dois atores depois da colisão
+        #         # Conferindo status dos dois atores depois da colisão
         self.assertEqual(ator2.status, DESTRUIDO, 'Status deveria ser destruido depois da colisão')
         self.assertEqual(ator.status, DESTRUIDO, 'Status deveria ser destruido depois da colisão')
 
@@ -264,8 +264,6 @@ class PassaroAmareloTests(PassaroBaseTests):
         """
         passaro_amarelo = PassaroAmarelo(1, 1)
         passaro_amarelo.lancar(90, 2)  # passaro lancado a 90 graus no tempo 2 segundos
-
-
 
         # subindo
 
